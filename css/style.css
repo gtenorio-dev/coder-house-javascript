@@ -1,0 +1,147 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: #f2f2f2;
+  grid-area: header;
+}
+
+main {
+  background-color: #ffffff;
+  grid-area: main;
+  padding: 4rem;
+}
+
+footer {
+  background-color: #560bad;
+  grid-area: footer;
+}
+
+#nav {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+
+  background-color: #e44dcd;
+  grid-area: nav;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+#gridLayout {
+  display: grid;
+  grid-template-areas:
+    "nav header"
+    "nav main";
+  /* "nav footer"; */
+
+  /* grid-template-rows: auto auto 10rem; */
+  grid-template-rows: auto auto;
+  grid-template-columns: 25% 75%;
+}
+
+.btn-outline-info:hover {
+  color: white;
+}
+
+.modal-shop {
+  width: 50rem;
+  margin: auto;
+}
+
+.border-rounded {
+  border-radius: 2rem;
+}
+
+.crypto__card {
+  background: #f2f2f2;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2rem;
+  border-color: #f2f2f2;
+  box-shadow: 0 2px 20px 0px #d0d0d0;
+  border-width: 0.15rem;
+  width: 18rem;
+  /* height: 12rem; */
+  margin: 2rem;
+}
+
+.crypto__card:hover {
+  border-width: 0.15rem;
+  border-color: #0dcaf0;
+}
+
+.crypto__card a {
+  color: #000000;
+}
+
+.crypto__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: flex-start; */
+  justify-content: space-evenly;
+  max-width: 75rem;
+  margin: auto;
+}
+
+.header-container {
+  max-width: 20rem;
+}
+
+.crypto-img-m {
+  width: 5rem;
+}
+
+.crypto-img-s {
+  width: 1.2rem;
+}
+
+.imgProfile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #efefef;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.btn-white {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.wallet-crypto-img {
+  width: 2rem;
+}
+
+.wallet-style {
+  max-width: 40rem;
+  margin: auto;
+  border: solid;
+  border-radius: 2rem;
+  border-color: #f2f2f2;
+  padding: 3rem 6rem 3rem 6rem;
+}

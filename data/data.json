@@ -1,0 +1,22 @@
+[
+  {
+    "ticker": "BTC",
+    "name": "Bitcoin",
+    "price": 41250
+  },
+  {
+    "ticker": "ETH",
+    "name": "Ethereum",
+    "price": 3055
+  },
+  {
+    "ticker": "BNB",
+    "name": "Binance Coin",
+    "price": 450.49
+  },
+  {
+    "ticker": "MATIC",
+    "name": "Polygon",
+    "price": 1.59
+  }
+]

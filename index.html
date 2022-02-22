@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>To Crypto</title>
+  </head>
+  <body>
+    <div id="gridLayout">
+      <header class="">
+        <div class="container p-3">
+          <div class="d-flex justify-content-end">
+            <form class="d-flex">
+              <input
+                class="form-control me-2 border-rounded"
+                type="search"
+              />
+              <button class="btn btn-outline-info border-rounded" type="submit">
+                Filter
+              </button>
+            </form>
+          </div>
+        </div>
+      </header>
+
+      <!-- Navigation -->
+      <section id="nav">
+        
+        <div class="m-5">
+          <button id="homeNav" class="btn btn-info border-rounded text-white" type="button">Home</button>
+          <!-- <button id="historyNav" class="btn btn-info" type="button">History</button> -->
+        </div>
+
+        <div class="imgProfile mx-auto">
+          <img src="./assets/img/profile.png" alt="Profile image">
+        </div>
+
+
+        <!-- Available in acount -->
+        <div class="m-5">
+          <label class="form-label text-white">Available</label>
+          <input
+            class="form-control me-2 border-rounded text-center"
+            type="text"
+            disabled
+            id="availableAmountNav"
+          />
+        </div>
+
+        <div class="mx-5 my-2">
+          <button id="walletNav" class="btn btn-info border-rounded text-white w-100" type="button">Wallet</button>
+        </div>
+
+        <div class="mx-5 my-2">
+          <button id="activityNav" class="btn btn-outline-info btn-white border-rounded w-100" type="button">Activity</button>
+        </div>
+
+
+      </section>
+
+
+      <!-- Cryptocurrencies -->
+      <main>
+
+        <div id="shoppingHistory">
+          <div class="container" id="shoppingHistoryContainer">
+            <table class="table table-borderless table-striped table-hover">
+              <thead class="table-info">
+                <tr>
+                    <td>Date</td>
+                    <td>Type</td>
+                    <td>Cryptocurrencie</td>
+                    <td>Amount</td>
+                    <td>Price</th>
+                    <td>Total</th>
+                </tr>
+              </thead>
+              <tbody id="shoppingHistoryTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="wallet-style" id="userWalletContainer">
+          <table class="table table-borderless">
+            <tbody id="userWallet">
+              
+            </tbody>
+          </table>
+        </div>
+
+
+          <div  id="cryptoList">
+            
+            <!-- Spinner -->
+            <div id="spinner" class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            
+            <div class="crypto__container mb-5" id="cryptoListContainer"></div>
+            
+            
+            <!-- TODO Pagination For Updates -->
+            <!-- <nav aria-label="Page navigation example" class="m-5">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div> -->
+          
+      </main>
+      
+      <footer class="fixed-bottom">
+        <div class="text-center text-light m-3">
+          <p>Gabil Tenorio &copy; 2022</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- My Modal -->
+    <div
+      class="modal fade"
+      id="modalShop"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-rounded modal-shop">
+          <div class="modal-body">
+            <!-- Form -->
+            <div
+              class="container d-flex flex-row justify-content-evenly align-items-center p-2"
+            >
+              <div class="text-center">
+                <div class="m-5">
+                  <img  id="modalImage" class="img-fluid crypto-img-m">
+                </div>
+                <div class="card-title">
+                  <h2 id="modalSymbol"></h2>
+                </div>
+                <div class="card-subtitle">
+                  <p id="modalName"></p>
+                </div>
+                <h3 id="modalPrice"></h3>
+              </div>
+
+              <div>
+                <form id="modalForm" class="p-4">
+                  <div class="mb-4">
+                    <label for="" class="form-label">Available</label>
+                    <input
+                      class="form-control me-2 border-rounded text-center"
+                      type="text"
+                      disabled
+                      id="availableAmount"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="" class="form-label">Amount</label>
+                    <input
+                      id="modalAmountToBuy"
+                      class="form-control me-2 border-rounded text-center"
+                      type="number"
+                    />
+                  </div>
+                  <div id="modalFeesLbl">
+                    <div>
+                      <label for="" class="formlabel">Site Fee</label>
+                      <label
+                        for=""
+                        class="formlabel text-end"
+                        id="modalSiteFee"
+                      ></label>
+                    </div>
+                    <div class="mb-4">
+                      <label for="" class="formlabel">Country Fee</label>
+                      <label
+                        for=""
+                        class="formlabel"
+                        id="modalCountryFee"
+                      ></label>
+                    </div>
+                    <div class="mb-4">
+                      <label
+                        for=""
+                        class="formlabel"
+                        id="modalTotalFee"
+                      ></label>
+                    </div>
+                  </div>
+                  <button
+                    id="modalBuyBtn"
+                    type="button"
+                    class="btn btn-info border-rounded text-light w-100"
+                    disabled
+                  >
+                    Buy
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div id="modalAlert" class="alert alert-danger" role="alert"></div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button
+              type="button"
+              class="btn btn-secondary border-rounded px-5 text-center"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    
+    <!-- JQuery -->
+    <!-- <script src="./js/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <!-- My Scripts -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
